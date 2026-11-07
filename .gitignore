@@ -73,3 +73,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# Generated folders inside our Unity project
+SilenceProtocol/[Ll]ibrary/
+SilenceProtocol/[Tt]emp/
+SilenceProtocol/[Oo]bj/
+SilenceProtocol/[Ll]ogs/
+SilenceProtocol/[Uu]ser[Ss]ettings/
+SilenceProtocol/[Bb]uild/
+SilenceProtocol/[Bb]uilds/
+SilenceProtocol/.vs/
