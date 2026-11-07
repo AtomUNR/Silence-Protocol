@@ -38,6 +38,8 @@ public class BottleInteraction : MonoBehaviour
 
     void TryPickup()
     {
+        if (bottle == null)
+            return;
         // Stop at the first surface in front of the camera.
         if (!Physics.Raycast(
                 playerCamera.position,
@@ -65,6 +67,7 @@ public class BottleInteraction : MonoBehaviour
 
     void Throw()
     {
+        bottle.GetComponent<BottleBreak>().Arm();
         bottle.transform.SetParent(null, true);
         bottleCollider.enabled = true;
         bottle.isKinematic = false;
