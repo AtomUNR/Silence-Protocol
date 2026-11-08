@@ -2,6 +2,14 @@ using UnityEngine;
 
 public class BottleBreak : MonoBehaviour
 {
+    public AudioClip impactSound;
+    public AudioClip shatterSound;
+
+    [Range(0f, 1f)]
+    public float volume = 1f;
+
+    public float minimumImpactSpeed = 0.5f;
+
     private bool isArmed;
     private bool isBroken;
 
@@ -17,11 +25,25 @@ public class BottleBreak : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (!isArmed || isBroken)
+        if (isBroken)
             return;
 
-        isBroken = true;
-        Debug.Log("Bottle broke!", this);
-        Destroy(gameObject);
+        if (isArmed)
+        {
+            isBroken = true;
+
+            if (shatterSound != null)
+                AudioSource.PlayClipAtPoint(
+                    shatterSound, transform.position, volume);
+
+            Debug.Log("Bottle broke!", this);
+            Destroy(gameObject);
+        }
+        else if (collision.relativeVelocity.magnitude >= minimumImpactSpeed)
+        {
+            if (impactSound != null)
+                AudioSource.PlayClipAtPoint(
+                    impactSound, transform.position, volume);
+        }
     }
 }

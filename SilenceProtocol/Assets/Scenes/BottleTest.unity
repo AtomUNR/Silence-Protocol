@@ -732,6 +732,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b54e8d10aae4242a47bd55213767d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BottleBreak
+  impactSound: {fileID: 8300000, guid: 185a6d65b9f40e64fb224082a3c9203b, type: 3}
+  shatterSound: {fileID: 8300000, guid: b22d6602fc12d9046a0ae270451ae6e1, type: 3}
+  volume: 1
+  minimumImpactSpeed: 0.5
 --- !u!1 &1752821414
 GameObject:
   m_ObjectHideFlags: 0
