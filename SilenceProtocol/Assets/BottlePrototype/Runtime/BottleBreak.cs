@@ -12,6 +12,7 @@ public class BottleBreak : MonoBehaviour
 
     private bool isArmed;
     private bool isBroken;
+    public bool IsArmed => isArmed;
 
     public void Arm()
     {
